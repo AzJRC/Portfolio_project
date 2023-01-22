@@ -2,10 +2,10 @@
     box-sizing: border-box;
   
     /* Variable colors */
-    --primary-colorPurple: #a0074e;
+    --primary-colorPurple: #79033a;
     --primary-colorWhite: #fff;
     --primary-colorOrange: #fd671c;
-
+    --shadow-orange: 0px 4px 15px rgba(25, 10, 3, 0.5);
     /* Variable transition */
     --general-transition: all 0.4s ease-in-out;
   }
@@ -55,9 +55,66 @@ section {
     transform: translateY(-100%) scale(0);
     transition: var(--general-transition);
     background-color: var(--primary-colorPurple);
-}
 
     .sec1 {
-        display: none;
-        transform: translateY(0) scale(1);
+      display: none;
+      transform: translateY(0) scale(1);
+  }
+
+}
+
+//Controls
+
+.controls {
+  position: fixed;
+  left: 50%;
+  bottom: 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50%);
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+
+  .control {
+    margin: 0.3rem;
+    font-size: 1.1rem;
+    background-color: var(--primary-colorOrange);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-orange);
+    text-align: center;
+    i {
+      font-size: 1.4rem;
+      color: var(--primary-colorPurple);
+      pointer-events: none;
+      transition: all 0.2s ease-in-out;
     }
+  }
+  //Activated button effect 
+  .active-btn {
+    background-color: var(--primary-colorWhite) !important;
+    cursor: default !important;
+    > i {
+      color: var(--primary-colorPurple) !important; 
+      font-size: 1.4rem !important;
+    }
+  } 
+
+  //special selector cases
+  .control:hover {
+    
+    > i {
+      color: var(--primary-colorWhite);
+      font-size: 1.6rem;
+    }
+  }
+
+}
+
