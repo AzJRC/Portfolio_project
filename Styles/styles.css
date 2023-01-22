@@ -1,9 +1,9 @@
 :root {
   box-sizing: border-box;
   /* Variable colors */
-  --primary-colorPurple: #79033a;
-  --primary-colorWhite: #fff;
-  --primary-colorOrange: #fd671c;
+  --primary-colorPurple: #520529;
+  --primary-colorWhite: rgb(237, 234, 227);
+  --primary-colorOrange: #ff9727;
   --shadow-orange: 0px 4px 15px rgba(25, 10, 3, 0.5);
   /* Variable transition */
   --general-transition: all 0.4s ease-in-out;
@@ -33,9 +33,9 @@ a {
 
 header {
   font-family: inherit;
-  color: var(--primary-colorPurple);
   width: 100%;
-  padding: 3rem 10rem;
+  height: 100vh;
+  padding: 2rem 1rem;
   overflow: hidden;
 }
 
@@ -46,16 +46,54 @@ section {
   left: 0;
   right: 0;
   padding: 3rem 10rem;
+  transition: var(--general-transition);
 }
 
-.section {
-  transform: translateY(-100%) scale(0);
-  transition: var(--general-transition);
-  background-color: var(--primary-colorPurple);
-}
-.section .sec1 {
+.sec1 {
   display: none;
   transform: translateY(0) scale(1);
+}
+
+.sec2 {
+  display: none;
+  transform: translateY(0) scale(1);
+}
+
+.sec3 {
+  display: none;
+  transform: translateY(0) scale(1);
+}
+
+.sec4 {
+  display: none;
+  transform: translateY(0) scale(1);
+}
+
+.sec5 {
+  display: none;
+  transform: translateY(0) scale(1);
+}
+
+.active {
+  display: block;
+  -webkit-animation: anim1 0.6s ease-in-out;
+          animation: anim1 0.6s ease-in-out;
+}
+@-webkit-keyframes anim1 {
+  0% {
+    transform: translateY(-100%) scaleY(0);
+  }
+  100% {
+    transform: translateX(0) scaleY(1);
+  }
+}
+@keyframes anim1 {
+  0% {
+    transform: translateY(-100%) scaleY(0);
+  }
+  100% {
+    transform: translateX(0) scaleY(1);
+  }
 }
 
 .controls {
@@ -73,7 +111,7 @@ section {
 .controls .control {
   margin: 0.3rem;
   font-size: 1.1rem;
-  background-color: var(--primary-colorOrange);
+  background-color: var(--primary-colorWhite);
   width: 55px;
   height: 55px;
   border-radius: 50%;
@@ -91,14 +129,109 @@ section {
   transition: all 0.2s ease-in-out;
 }
 .controls .active-btn {
-  background-color: var(--primary-colorWhite) !important;
+  background-color: var(--primary-colorOrange) !important;
   cursor: default !important;
 }
 .controls .active-btn > i {
   color: var(--primary-colorPurple) !important;
-  font-size: 1.6rem !important;
+  font-size: 1.8rem !important;
 }
 .controls .control:hover > i {
+  font-size: 1.8rem;
+}
+
+.header-content {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  height: 85%;
+  width: 100%;
+  transition: var(--general-transition);
+}
+.header-content .header-left {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
+  height: 100%;
+  padding-left: 2rem;
+  transition: var(--general-transition);
+}
+.header-content .header-left .back-figure {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 50%;
+  height: 100%;
+  background-color: var(--primary-colorWhite);
+  -webkit-clip-path: polygon(0 0, 72% 0, 22% 100%, 0% 100%);
+          clip-path: polygon(0 0, 72% 0, 22% 100%, 0% 100%);
+  transition: var(--general-transition);
+}
+.header-content .header-left .image {
+  width: 60%;
+  height: 100%;
+  margin-left: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: var(--general-transition);
+  padding: 0px 5px;
+  border-radius: 2%;
+}
+.header-content .header-left .image:hover {
+  background: black;
+}
+.header-content .header-left .image:hover img {
+  transform: scale(1.1);
+}
+.header-content .header-left .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: var(--general-transition);
+  filter: grayscale(100%);
+}
+.header-content .header-left .image img:hover {
+  filter: grayscale(0%);
+}
+.header-content .header-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 2rem;
+  width: 100%;
+  height: 100%;
+  transition: var(--general-transition);
+}
+.header-content .header-right #lastnames {
+  font-size: 3rem;
+  text-align: left;
+  color: var(--primary-colorOrange);
+}
+.header-content .header-right #names {
+  font-size: 2rem;
+  text-align: left;
+  color: var(--primary-colorOrange);
+}
+.header-content .header-right .my_desc {
+  padding: 1rem 8rem 1rem 0;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+  text-align: justify;
   color: var(--primary-colorWhite);
-  font-size: 1.6rem;
+}
+.header-content .header-right .cv_desc {
+  padding: 1rem 8rem 1rem 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+  text-align: justify;
+  color: var(--primary-colorWhite);
+}
+.header-content .header-right .cv_desc span {
+  color: var(--primary-colorOrange);
+  cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */

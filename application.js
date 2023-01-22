@@ -1,10 +1,10 @@
 const allSections = document.querySelectorAll('.section');
 const sectButtons = document.querySelectorAll('.controls');
 const sectButton = document.querySelectorAll('.control');
-const mainDoc = document.querySelectorAll('.main-content');
+const sectBody = document.querySelector('.main-content');
 
-//function to set the section of the page
 function pageTransition() {
+    //button selection
     for (let i = 0; i < sectButton.length; i++) {
         sectButton[i].addEventListener('click', function() {
             let currentBtn = document.querySelectorAll('.active-btn');
@@ -12,6 +12,19 @@ function pageTransition() {
             this.className += ' active-btn';
         })
     }
+
+    //section activation
+    sectBody.addEventListener('click', function(e) {
+        const id = e.target.dataset.id;
+        const activeElement = document.getElementById(id);
+        if(id) {
+            //remove the .active class for each section
+            allSections.forEach((section) => {
+                section.classList.remove("active")
+            })
+            activeElement.className += (" active");
+        }
+    })
 }
 
 pageTransition();

@@ -17,30 +17,53 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="main-content">
-    <!--Header of the portfolio-->
-    <header class="header section sec1 active">
-        
+    <!--All .section elements of the document-->
+    <header class="header section sec1 active" id="home">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="back-figure"></div>
+                <div class="image">
+                    <img src="/resources/portrait_example.png" alt="temporary image" />
+                </div>
+            </div>
+            <div class="header-right">
+                <h1 id="lastnames">My last names</h1>
+                <h2 id="names">My names</h2>
+                <p class="my_desc">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In nulla posuere sollicitudin aliquam ultrices. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In nulla posuere sollicitudin aliquam ultrices. 
+                </p>
+                <p class="cv_desc">Click <span>here <i class="fa-solid fa-cloud-arrow-down"></i></span> to download my CV!</p>
+            </div>
+        </div>
     </header>
-    <!--Sections of the portfolio-->
-    <section class="section sec2 about"></section>
-    <section class="section sec3 portfolio"></section>
-    <section class="section sec4 education"></section>
-    <section class="section sec5 contact"></section>
+    <section class="section sec2 about" id="about">
+
+    </section>
+    <section class="section sec3 portfolio" id="portfolio">
+
+    </section>
+    <section class="section sec4 education" id="education">
+
+    </section>
+    <section class="section sec5 contact" id="contact">
+
+    </section>
+
     <!--Controls bar-->
     <div class="controls">
-        <div class="control control-1 active-btn">
-            <i class="fa-solid fa-home"></i> <!--home button-->
+        <div class="control control-1 active-btn" data-id="home" >
+            <i class="fa-solid fa-home"></i> <!--header button-->
         </div>
-        <div class="control control-2">
-            <i class="fa-solid fa-user"></i> <!--user button-->
+        <div class="control control-2" data-id="about">
+            <i class="fa-solid fa-user"></i> <!--about button-->
         </div>
-        <div class="control control-3">
+        <div class="control control-3" data-id="portfolio">
             <i class="fa-solid fa-briefcase"></i> <!--portfolio button-->
         </div>
-        <div class="control control-4">
+        <div class="control control-4" data-id="education">  
             <i class="fa-solid fa-award"></i> <!--education button-->
         </div>
-        <div class="control control-5">
+        <div class="control control-5" data-id="contact">
             <i class="fa-solid fa-envelope-open"></i> <!--contact button-->
         </div>
     </div>
