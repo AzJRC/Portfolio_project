@@ -205,33 +205,89 @@ section {
   height: 100%;
   transition: var(--general-transition);
 }
-.header-content .header-right #lastnames {
-  font-size: 3rem;
-  text-align: left;
-  color: var(--primary-colorOrange);
+.header-content .header-right .first_impress {
+  font-size: 2.5rem;
+  padding-right: 2rem;
+  font-weight: 600;
 }
-.header-content .header-right #names {
-  font-size: 2rem;
-  text-align: left;
+.header-content .header-right .first_impress span {
   color: var(--primary-colorOrange);
 }
 .header-content .header-right .my_desc {
-  padding: 1rem 8rem 1rem 0;
-  line-height: 1.5rem;
-  font-size: 1.2rem;
+  padding: 1rem 4rem 1rem 0;
+  line-height: 2rem;
+  font-size: 1.1rem;
   text-align: justify;
   color: var(--primary-colorWhite);
 }
-.header-content .header-right .cv_desc {
-  padding: 1rem 8rem 1rem 0;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  line-height: 1.5rem;
-  font-size: 1.2rem;
-  text-align: justify;
-  color: var(--primary-colorWhite);
+
+.btn-container {
+  display: flex;
+  align-self: flex-start;
 }
-.header-content .header-right .cv_desc span {
-  color: var(--primary-colorOrange);
+.btn-container .btn-link {
+  border-radius: 30px;
+  color: inherit;
+  font-weight: 600;
+  border: 2px solid var(--primary-colorOrange);
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  overflow: hidden;
+}
+.btn-container .btn-link .btn-text {
+  padding: 0 0.6rem;
+}
+.btn-container .btn-link .btn-icon {
+  display: flex;
+  background-color: var(--primary-colorOrange);
+  align-items: center;
+  align-content: flex-end;
+  padding: 0.6rem;
+  border-radius: 50%;
+}
+.btn-container .btn-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  z-index: -1;
+}
+.btn-container .btn-link:hover {
   cursor: pointer;
+}
+.btn-container .btn-link:hover::before {
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-colorOrange);
+  transform: scaleX(1);
+  transition: var(--general-transition);
+}
+.btn-container .btn-link:hover .btn-icon i {
+  -webkit-animation: popAnim 0.8s ease-in-out infinite;
+          animation: popAnim 0.8s ease-in-out infinite;
+}
+@-webkit-keyframes popAnim {
+  0% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes popAnim {
+  0% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }/*# sourceMappingURL=styles.css.map */
